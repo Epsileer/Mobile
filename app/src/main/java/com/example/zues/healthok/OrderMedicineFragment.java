@@ -69,7 +69,7 @@ public class OrderMedicineFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(final LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         inflate = inflater.inflate(R.layout.fragment_order_medicines, container, false);
@@ -103,7 +103,16 @@ public class OrderMedicineFragment extends Fragment {
                     Toast.makeText(homeActivity, "Please enter need by date!!", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                new UploadDetails().execute();
+                if (imageUri != null && !imageUri.equals(Uri.EMPTY)) {
+                    //doTheThing()
+                    new UploadDetails().execute();
+                    //return;
+                } else {
+                    //followUri is null or empty
+                    Toast.makeText(homeActivity,"Prescription Not Uploaded",Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                //new UploadDetails().execute();
             }
         });
         return inflate;
@@ -285,7 +294,7 @@ public class OrderMedicineFragment extends Fragment {
             // Dismiss the progress dialog
             if (pDialog.isShowing())
                 pDialog.dismiss();
-            if (jsonStr.isEmpty()) {
+            if (jsonStr == null) {
                 Toast.makeText(homeActivity, "Unable to connect!!", Toast.LENGTH_SHORT).show();
             } else {
                 userFull = UserFull.fromJSON(jsonStr);

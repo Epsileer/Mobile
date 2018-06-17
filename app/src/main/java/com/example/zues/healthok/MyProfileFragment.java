@@ -84,7 +84,7 @@ public class MyProfileFragment extends Fragment {
         SimpleDateFormat sdf = new SimpleDateFormat("dd/mm/yyyy");
 
         ((TextView) inflate.findViewById(R.id.nameTextView)).setText(userFull.getFirstName() + " " + userFull.getLastName());
-        ((TextView) inflate.findViewById(R.id.regNoTextView)).setText(userFull.getRegistrationNumber());
+        ((TextView) inflate.findViewById(R.id.regNoTextView)).setText(""+userFull.getUserId());
         ((TextView) inflate.findViewById(R.id.regDateTextView)).setText(sdf.format(userFull.getRegistrationDate()));
         ((TextView) inflate.findViewById(R.id.emailTextView)).setText(userFull.getEmailId());
         ((TextView) inflate.findViewById(R.id.mobileNoTextView)).setText(userFull.getMobile());
@@ -173,7 +173,7 @@ public class MyProfileFragment extends Fragment {
             // Dismiss the progress dialog
             if (pDialog.isShowing())
                 pDialog.dismiss();
-            if (jsonStr.isEmpty()) {
+            if (jsonStr == null) {
                 Toast.makeText(homeActivity, "Unable to connect!!", Toast.LENGTH_SHORT).show();
             } else {
                 userFull = UserFull.fromJSON(jsonStr);

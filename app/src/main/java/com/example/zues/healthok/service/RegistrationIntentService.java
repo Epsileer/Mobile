@@ -8,6 +8,7 @@ import android.util.Log;
 
 import com.example.zues.healthok.R;
 import com.example.zues.healthok.SessionManager;
+import com.example.zues.healthok.model.GCMRequestData;
 import com.example.zues.healthok.util.ServiceHandler;
 import com.example.zues.healthok.util.ServiceURL;
 import com.example.zues.healthok.util.StatusCode;
@@ -17,10 +18,11 @@ import com.google.android.gms.iid.InstanceID;
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONObject;
-
+import android.support.v4.content.LocalBroadcastManager;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import com.example.zues.healthok.HomeActivity;
 
 /**
  * Created by Abhay-Jaiswal on 3/19/2016.
@@ -29,6 +31,8 @@ public class RegistrationIntentService extends IntentService {
 
     public static final String SENT_TOKEN_TO_SERVER = "sentTokenToServer";
     public static final String GCM_TOKEN = "gcmToken";
+    public static final String REGISTRATION_SUCCESS = "RegistrationSuccess";
+    public static final String REGISTRATION_ERROR = "RegistrationError";
     // abbreviated tag name
     private static final String TAG = "RegIntentService";
 
@@ -38,16 +42,19 @@ public class RegistrationIntentService extends IntentService {
 
     @Override
     protected void onHandleIntent(Intent intent) {
+        String token = null;
         // Make a call to Instance API
-        InstanceID instanceID = InstanceID.getInstance(this);
+        InstanceID instanceID = InstanceID.getInstance(getApplicationContext());
 //        InstanceID instanceID = InstanceID.getInstance(getApplicationContext());
         String senderId = getResources().getString(R.string.gcm_defaultSenderId);
+        Intent registrationComplete = null;
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
 
         try {
             // request token that will be used by the server to send push notifications
-            String token = instanceID.getToken(senderId, GoogleCloudMessaging.INSTANCE_ID_SCOPE);
+            token = instanceID.getToken("846114174530", GoogleCloudMessaging.INSTANCE_ID_SCOPE);
             Log.d(TAG, "GCM Registration Token: " + token);
+            registrationComplete = new Intent(REGISTRATION_SUCCESS);
 
             // save token
             new SessionManager(getApplicationContext()).setGCMToken(token);
@@ -57,11 +64,19 @@ public class RegistrationIntentService extends IntentService {
         } catch (IOException e) {
             e.printStackTrace();
             Log.d(TAG, "Failed to complete token refresh", e);
+            registrationComplete = new Intent(REGISTRATION_ERROR);
             // If an exception happens while fetching the new token or updating our registration data
             // on a third-party server, this ensures that we'll attempt the update at a later time.
             new SessionManager(getApplicationContext()).setSentTokenToServer(false);
 
         }
+        LocalBroadcastManager.getInstance(this).sendBroadcast(registrationComplete);
+        GCMRequestData g = GCMRequestData.getInstance();
+        g.setMessage(token);
+
+       // registrationComplete.setAction("com.example.zues.healthok.CUSTOM_INTENT");
+        //registrationComplete.putExtra("token",token);
+        //sendBroadcast(registrationComplete);
     }
 
     private void sendRegistrationToServer(String token) {

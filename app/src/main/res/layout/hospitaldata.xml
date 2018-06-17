@@ -25,19 +25,7 @@
             android:layout_height="wrap_content"
             android:text="Has Radiology" />
 
-        <RadioButton
-            android:id="@+id/radioButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Has Diagnistics" />
 
-        <RadioButton
-            android:id="@+id/radioButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="-250dp"
-            android:layout_marginTop="30dp"
-            android:text="Has Ambulance" />
     </LinearLayout>
 
     <TextView

@@ -26,6 +26,8 @@ public class ServiceURL {
     public static String DocterImage = "files/image/";
     public static String favDoctors = "doctor/user/";
     public static String reportsPath = "ordermanagement/getlabtests/";
+    public static String emg = "emergency";
+    public static String healthhistory = "measure/member/";
 
     /* From website
     doctorSearchPath: "doctor/search/",

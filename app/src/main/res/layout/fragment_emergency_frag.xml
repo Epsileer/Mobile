@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Emergency_frag"
+    android:background="@drawable/bgwhite">
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/textView31"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="29dp"
+            android:text="Emergency Services"
+            android:textColor="#f10606"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/emgtype"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textView31"
+            android:layout_alignStart="@+id/textView31"
+            android:layout_below="@+id/textView31"
+            android:layout_marginTop="24dp"
+            android:entries="@array/emergeny"/>
+
+        <TextView
+            android:id="@+id/emgdt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/emgtype"
+            android:layout_alignStart="@+id/emgtype"
+            android:layout_below="@+id/emgtype"
+            android:layout_marginTop="26dp"
+            android:text="Description"
+            android:fontFamily="monospace"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/emgdcp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/emgdt"
+            android:layout_alignStart="@+id/emgdt"
+            android:layout_below="@+id/emgdt"
+            android:ems="10"
+            android:inputType="textPersonName" />
+
+        <TextView
+            android:id="@+id/textView33"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/emgdcp"
+            android:layout_alignStart="@+id/emgdcp"
+            android:layout_below="@+id/emgdcp"
+            android:layout_marginTop="22dp"
+            android:text="Location"
+            android:fontFamily="monospace"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/emglocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textView33"
+            android:layout_alignStart="@+id/textView33"
+            android:layout_below="@+id/textView33"
+            android:layout_marginTop="17dp"
+            android:ems="10"
+            android:inputType="textPersonName" />
+
+        <CheckBox
+            android:id="@+id/emgsetgps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/emglocation"
+            android:layout_alignStart="@+id/emglocation"
+            android:layout_below="@+id/emglocation"
+            android:layout_marginTop="20dp"
+            android:text="My Location"
+            android:fontFamily="monospace"
+            android:textColor="#136e01"/>
+
+        <Button
+            android:id="@+id/emgsub"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/emgsetgps"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="43dp"
+            android:text="Submit"
+            android:fontFamily="monospace"
+            android:background="@color/blue_300"
+            android:textStyle="bold"
+            android:width="150dp"/>
+    </RelativeLayout>
+
+</ScrollView>

@@ -1,5 +1,6 @@
 package com.example.zues.healthok;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
@@ -155,6 +156,7 @@ public class Medicine extends AppCompatActivity {
     }
 
 
+    @SuppressLint("WrongViewCast")
     public void placeOrder(View view) {
 
         orderBase = new OrderBase();

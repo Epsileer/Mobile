@@ -187,6 +187,7 @@ public class Login extends AppCompatActivity {
             if (pDialog.isShowing())
                 pDialog.dismiss();
             if (status == ERROR) {
+
                 Toast.makeText(getApplicationContext(), "WRONG Username / Password", Toast.LENGTH_LONG).show();
             } else if (status == NETWORK_ERROR) {
                 Toast.makeText(getApplicationContext(), "Unable to reach server try again...", Toast.LENGTH_LONG).show();

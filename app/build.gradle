@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 26
-    buildToolsVersion '26.0.0'
+    buildToolsVersion '26.0.2'
     useLibrary 'org.apache.http.legacy'
     defaultConfig {
         applicationId "com.example.zues.healthok"
@@ -31,7 +31,8 @@ dependencies {
 
 
     compile 'com.beardedhen:androidbootstrap:2.1.0'
-    compile 'com.android.support:appcompat-v7:26.0.0-alpha1'
+    //compile 'com.android.support:appcompat-v7:26.0.0-alpha1'
+    compile 'com.android.support:appcompat-v7:26.0.2'
     compile 'com.android.support:support-v13:26.0.0-alpha1'
     compile 'com.google.code.gson:gson:2.2.4'
     compile 'com.google.android.gms:play-services-gcm:8.4.0'
@@ -42,6 +43,8 @@ dependencies {
     compile 'org.jetbrains:annotations-java5:15.0'
     compile 'com.github.bumptech.glide:glide:3.7.0'
     compile 'com.github.silvestrpredko:dot-progress-bar:1.1'
+
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.0.3'
 }
 android {
     packagingOptions {

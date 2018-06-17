@@ -1,0 +1,253 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.zues.healthok.AddHistory"
+    android:background="@drawable/bck1">
+
+    <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="700dp">
+
+        <TextView
+            android:id="@+id/welcomeTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="@color/bootstrap_gray_light"
+            android:gravity="center_horizontal"
+            android:padding="10dp"
+            android:text="Welcome" />
+
+        <TextView
+            android:id="@+id/tv1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignLeft="@+id/tvf"
+            android:layout_alignStart="@+id/tvf"
+            android:layout_below="@+id/welcomeTextView"
+            android:layout_marginTop="29dp"
+            android:text="Family Name"
+            android:textColor="@color/bootstrap_gray_dark"
+            android:textSize="30dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/tv1"
+            android:layout_marginLeft="24dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="14dp"
+            android:text="Category *"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:textColor="@color/bootstrap_gray_dark"/>
+
+        <Spinner
+            android:id="@+id/addtest"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_alignLeft="@+id/tvf"
+            android:layout_alignStart="@+id/tvf"
+            android:layout_below="@+id/tvf"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="12dp"
+            android:entries="@array/addtest" />
+
+        <TextView
+            android:id="@+id/tvf0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/addtest"
+            android:layout_alignStart="@+id/addtest"
+            android:layout_below="@+id/addtest"
+            android:text="Select category for which you want to save data" />
+
+        <TextView
+            android:id="@+id/tvc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tvf0"
+            android:layout_alignStart="@+id/tvf0"
+            android:layout_below="@+id/tvf0"
+            android:layout_marginTop="13dp"
+            android:text=" *"
+            android:textColor="@color/bootstrap_gray_dark"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/addtype"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_alignLeft="@+id/tvc"
+            android:layout_alignStart="@+id/tvc"
+            android:layout_below="@+id/tvc"
+            android:layout_marginTop="12dp"
+            android:entries="@array/addtest" />
+
+        <TextView
+            android:id="@+id/tvc0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/addtype"
+            android:layout_alignStart="@+id/addtype"
+            android:layout_below="@+id/addtype"
+            android:text="Select measure for which you want to save data" />
+
+        <TextView
+            android:id="@+id/tvo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tvc0"
+            android:layout_alignStart="@+id/tvc0"
+            android:layout_below="@+id/tvc0"
+            android:layout_marginTop="11dp"
+            android:text="Value *"
+            android:textColor="@color/bootstrap_gray_dark"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/et1"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_alignLeft="@+id/tvo"
+            android:layout_alignStart="@+id/tvo"
+            android:layout_below="@+id/tvo"
+            android:layout_marginTop="14dp" />
+
+        <TextView
+            android:id="@+id/tvo0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/et1"
+            android:layout_alignStart="@+id/et1"
+            android:layout_below="@+id/et1"
+            android:text="Enter Value. Centimeters" />
+
+        <TextView
+            android:id="@+id/tvd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tvc0"
+            android:layout_alignStart="@+id/tvc0"
+            android:layout_below="@+id/tvo0"
+            android:layout_marginTop="11dp"
+            android:text="Date *"
+            android:textColor="@color/bootstrap_gray_dark"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/et"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_alignLeft="@+id/tvo"
+            android:layout_alignStart="@+id/tvo"
+            android:layout_below="@+id/tvd"
+            android:layout_marginTop="14dp"
+
+            android:text="click to add date" />
+
+
+
+        <TextView
+            android:id="@+id/tvd0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/et1"
+            android:layout_alignStart="@+id/et1"
+            android:layout_below="@+id/et"
+            android:text="Enter date when measure taken." />
+
+        <Button
+            android:id="@+id/save"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvd0"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="23dp"
+            android:background="#38a7f5"
+            android:text="Save" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/save">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                >
+
+
+                <TableLayout
+                    android:id="@+id/healthhistorytable"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentEnd="true"
+                    android:background="@drawable/border"
+                    android:layout_margin="50dp">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/border"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textView101"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/border"
+                            android:gravity="center_horizontal"
+                            android:padding="@dimen/table_cell_padding"
+                            android:text="Vital"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/textView103"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/border"
+                            android:gravity="center_horizontal"
+                            android:padding="@dimen/table_cell_padding"
+                            android:text="Value"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/textView105"
+                            android:layout_width="105dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/border"
+                            android:gravity="center_horizontal"
+                            android:padding="@dimen/table_cell_padding"
+                            android:text="Date"
+                            android:textStyle="bold" />
+                    </TableRow>
+
+
+                </TableLayout>
+            </LinearLayout>
+        </HorizontalScrollView>
+
+
+    </RelativeLayout>
+
+
+
+</ScrollView>
+

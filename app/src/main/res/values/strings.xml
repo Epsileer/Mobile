@@ -22,7 +22,7 @@
     </string-array>
 
 
-    <!--  <string name="gcm_defaultSenderId">846114174530</string> -->
+    <!--<string name="gcm_defaultSenderId">846114174530</string>-->
 
     <string-array name="profile">
         <item>My Profile</item>
@@ -41,6 +41,22 @@
         <item>Communities</item>
         <item>Pages</item>
         <item>What\'s Hot</item>
+    </string-array>
+
+
+    <!-- Emergeny  -->
+    <string-array name="emergeny">
+        <item>Ambulance</item>
+        <item>Medicine</item>
+        <item>Nursing</item>
+        <item>Injection</item>
+    </string-array>
+    <string-array name="addtest">
+        <item>VITAL</item>
+        <item>TEST</item>
+        <item>VACCINATION</item>
+        <item>CHECKUP</item>
+
     </string-array>
 
     <string name="title_activity_homepage">Homepage</string>
@@ -100,5 +116,6 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+    <string name="emgprompt">Choose Emergency</string>
 
 </resources>

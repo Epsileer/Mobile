@@ -1,0 +1,4 @@
+#Sun Jun 17 20:34:49 IST 2018
+base.0=C\:\\Users\\AMIT TIWARI\\AndroidStudioProjects\\mobile-master_tiwari\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\29
+path.0=classes.dex
+renamed.0=classes.dex
