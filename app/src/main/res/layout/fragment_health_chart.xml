@@ -1,0 +1,229 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.zues.healthok.Health_chart"
+    android:background="@drawable/bck1">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/welcomeTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="@color/bootstrap_gray_light"
+            android:gravity="center_horizontal"
+            android:padding="10dp"
+            android:text="Welcome" />
+
+        <TextView
+            android:id="@+id/tv1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignLeft="@+id/tvf"
+            android:layout_alignStart="@+id/tvf"
+            android:layout_below="@+id/welcomeTextView"
+            android:layout_marginTop="29dp"
+            android:text="Health History"
+            android:textColor="@color/bootstrap_gray_dark"
+            android:textSize="30dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/tv1"
+            android:layout_marginLeft="24dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="14dp"
+            android:text="Family Member Name *"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:textColor="@color/bootstrap_gray_dark"/>
+
+        <Spinner
+            android:id="@+id/addtest"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_alignLeft="@+id/tvf"
+            android:layout_alignStart="@+id/tvf"
+            android:layout_below="@+id/tvf"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="10dp"
+            />
+
+        <TextView
+            android:id="@+id/tvf0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/addtest"
+            android:layout_alignStart="@+id/addtest"
+            android:layout_below="@+id/addtest"
+            android:text="Family member to view or add health history" />
+
+        <TextView
+            android:id="@+id/tvc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tvf0"
+            android:layout_alignStart="@+id/tvf0"
+            android:layout_below="@+id/tvf0"
+            android:layout_marginTop="13dp"
+            android:text="Catagory *"
+            android:textColor="@color/bootstrap_gray_dark"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/addtype"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_alignLeft="@+id/tvc"
+            android:layout_alignStart="@+id/tvc"
+            android:layout_below="@+id/tvc"
+            android:layout_marginTop="12dp" />
+
+        <TextView
+            android:id="@+id/tvc0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/addtype"
+            android:layout_alignStart="@+id/addtype"
+            android:layout_below="@+id/addtype"
+            android:text="Select category for which you want to save data" />
+
+        <TextView
+            android:id="@+id/tvo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tvc0"
+            android:layout_alignStart="@+id/tvc0"
+            android:layout_below="@+id/tvc0"
+            android:layout_marginTop="11dp"
+            android:text=""
+            android:textColor="@color/bootstrap_gray_dark"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/spinner3"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_alignLeft="@+id/tvo"
+            android:layout_alignStart="@+id/tvo"
+            android:layout_below="@+id/tvo"
+            android:layout_marginTop="14dp" />
+
+        <TextView
+            android:id="@+id/tvo0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/spinner3"
+            android:layout_alignStart="@+id/spinner3"
+            android:layout_below="@+id/spinner3"
+            android:text="Select measure for which you want to save data" />
+
+        <Button
+            android:id="@+id/addhistory"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/tvf"
+            android:layout_alignRight="@+id/tvf"
+            android:layout_below="@+id/tvo0"
+            android:layout_marginTop="31dp"
+            android:text="Add Health History"
+            android:background="#38a7f5"/>
+
+        <Button
+            android:id="@+id/healthhistoryshow"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/addhistory"
+            android:layout_alignBottom="@+id/addhistory"
+            android:layout_marginRight="16dp"
+            android:layout_marginStart="12dp"
+            android:layout_toEndOf="@+id/tvf"
+            android:layout_toRightOf="@+id/tvf"
+            android:background="#38a7f5"
+            android:text="Show" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/addhistory">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                >
+
+
+                <TableLayout
+                    android:id="@+id/healthhistorytable"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentEnd="true"
+                    android:background="@drawable/border"
+                    android:layout_margin="50dp">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/border"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textView101"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/border"
+                            android:gravity="center_horizontal"
+                            android:padding="@dimen/table_cell_padding"
+                            android:text="Vital"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/textView103"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/border"
+                            android:gravity="center_horizontal"
+                            android:padding="@dimen/table_cell_padding"
+                            android:text="Value"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/textView105"
+                            android:layout_width="105dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/border"
+                            android:gravity="center_horizontal"
+                            android:padding="@dimen/table_cell_padding"
+                            android:text="Date"
+                            android:textStyle="bold" />
+                    </TableRow>
+
+
+                </TableLayout>
+            </LinearLayout>
+        </HorizontalScrollView>
+
+    </RelativeLayout>
+
+
+
+</ScrollView>

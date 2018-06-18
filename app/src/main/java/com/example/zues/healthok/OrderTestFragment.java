@@ -93,7 +93,16 @@ public class OrderTestFragment extends Fragment {
                     Toast.makeText(homeActivity, "Please enter need by date!!", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                new UploadDetails().execute();
+                if (imageUri != null && !imageUri.equals(Uri.EMPTY)) {
+                    //doTheThing()
+                    new UploadDetails().execute();
+                    //return;
+                } else {
+                    //followUri is null or empty
+                    Toast.makeText(homeActivity,"Prescription Not Uploaded",Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
             }
         });
         return inflate;
@@ -275,7 +284,7 @@ public class OrderTestFragment extends Fragment {
             // Dismiss the progress dialog
             if (pDialog.isShowing())
                 pDialog.dismiss();
-            if (jsonStr.isEmpty()) {
+            if (jsonStr == null) {
                 Toast.makeText(homeActivity, "Unable to connect!!", Toast.LENGTH_SHORT).show();
             } else {
                 userFull = UserFull.fromJSON(jsonStr);

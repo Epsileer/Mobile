@@ -168,7 +168,7 @@ public class LabOrderDetailsFragment extends Fragment {
             // Dismiss the progress dialog
             if (pDialog.isShowing())
                 pDialog.dismiss();
-            if (jsonStr.isEmpty()) {
+            if (jsonStr == null) {
                 Toast.makeText(homeActivity, "Unable to connect!!", Toast.LENGTH_SHORT).show();
             } else {
                 Order order = Order.fromJSON(jsonStr);

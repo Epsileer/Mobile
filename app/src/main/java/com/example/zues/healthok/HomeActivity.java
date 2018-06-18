@@ -1,5 +1,7 @@
 package com.example.zues.healthok;
 
+import android.content.BroadcastReceiver;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -13,6 +15,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import com.example.zues.healthok.model.Db;
+import com.example.zues.healthok.service.*;
 import com.example.zues.healthok.model.Doctor;
 import com.example.zues.healthok.model.Order;
 
@@ -23,6 +27,7 @@ public class HomeActivity extends AppCompatActivity
     Order orderForOtherFragments;
     //    Doctor doctordata=BookAppointmentFragment.listresult.get(pos);
     Doctor doctorForOtherFragments;
+    public BroadcastReceiver mRegB;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +48,15 @@ public class HomeActivity extends AppCompatActivity
                 .add(R.id.fragment_container, new HomeFragment()).commit();
         navigationView.getMenu().getItem(0).setChecked(true);
         sessionManager = new SessionManager(getApplicationContext());
+
+
+        Db d = new Db(this);
+
+
+        Intent itent = new Intent(this, RegistrationIntentService.class);
+        startService(itent);
+
+
     }
 
     @Override
@@ -83,8 +97,13 @@ public class HomeActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        if (id == R.id.msg) {
+            swapFragment(new message_gcm());
+
+        }
+        if(id == R.id.emgm)
+        {
+            swapFragment(new Emergency_frag());
         }
 
         return super.onOptionsItemSelected(item);
@@ -149,6 +168,15 @@ public class HomeActivity extends AppCompatActivity
             case R.id.nav_menu_logout: {
                 swapFragment(new HomeFragment());
                 sessionManager.logoutUser();
+                break;
+            }
+            case R.id.nav_menu_health_history:{
+                swapFragment(new Health_chart() );
+                break;
+            }
+            case R.id.nav_menu_healthchart:
+            {
+                swapFragment(new UserHealthChart());
                 break;
             }
         }

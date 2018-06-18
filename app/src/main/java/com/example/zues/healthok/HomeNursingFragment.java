@@ -223,7 +223,7 @@ public class HomeNursingFragment extends Fragment {
             // Dismiss the progress dialog
             if (pDialog.isShowing())
                 pDialog.dismiss();
-            if (jsonStr.isEmpty()) {
+            if (jsonStr == null) {//error resolve
                 Toast.makeText(homeActivity, "Unable to connect!!", Toast.LENGTH_SHORT).show();
             } else {
                 userFull = UserFull.fromJSON(jsonStr);
